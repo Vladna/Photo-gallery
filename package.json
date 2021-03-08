@@ -10,7 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bootstrap": "^4.6.0",
     "lightbox2": "^2.11.3"
   }
 }
