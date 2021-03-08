@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styleIndex.css" />
+    <script src="index.js" defer></script>
+
+    <link rel="stylesheet"href="node_modules/lightbox2/dist/css/lightbox.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="node_modules/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Photo Gallery</a>
+       
+        <div class=" navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link active" aria-current="page"> </a>
+            <a class="nav-link" id="addPhoto" data-toggle="modal" data-target="#exampleModal1" >Add photo</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    
+      
+  
+    <div class="main-container">
+
+      <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog"  data-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabelAdd">Add photo(only JPEG)</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form >
+              <div class="container-fluid">
+                <label for="new-img-name" class="col-form-label">Name:</label>
+                  <input type="text" class="form-control" id="new-img-name" />
+                </div>
+                <div class="form-group"></div>
+                <label for="album-name-upl" class="col-form-label">Album:</label>
+                <div class="dropdown">
+                  <select id="album-name-upl" class="form-control" id="exampleFormControlSelect1">
+                  </select>
+                <input type="file" accept=".jpeg"  />
+                <br /><img id="img-upload" src="#" />
+ 
+              </div></form>
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="onClose()" >Close</button>
+              <button type="button" class="btn btn-primary" data-dismiss="modal"  onclick="saveImage()">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- modal -->
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true" data-backdrop="static"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel"></h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <label for="img-name" class="col-form-label">Name:</label>
+                  <input type="text" class="form-control" id="img-name" />
+                </div>
+                <div class="form-group"></div>
+                <label for="album-name" class="col-form-label">Album:</label>
+                <div class="dropdown">
+                  <select id="album-name" class="form-control" id="exampleFormControlSelect1">
+<!--                    <option >Default</option>
+ -->                  </select>
+                  </div>
+                </div>
+              </form>
+            
+            <div class="modal-footer">
+              <button
+              id="modal-close"
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+                onclick="onClose()"
+              >
+                Close
+              </button>
+              <button
+              id="modal-save"
+              data-dismiss="modal"
+                type="button"
+                onclick="saveChanges()"
+                class="btn btn-primary"
+              >
+                Save changes
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
